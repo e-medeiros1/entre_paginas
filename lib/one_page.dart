@@ -19,13 +19,23 @@ class _OnePageState extends State<OnePage> {
       backgroundColor: Colors.purple[200],
       body: Center(
         child: ElevatedButton(
-          onPressed: (
-          ) {
-            //Pode se usar também o pushReplacementNamed, caso não queira o botão de voltar
-            Navigator.of(context).pushNamed('/twoPage');
+          onPressed: () {
+            //Pode se usar também o pushNamed, caso queira o botão de voltar
+            Navigator.of(context).pushReplacementNamed('/twoPage');
           },
           child: Text('Ir para segunda página'),
-          
+          style: ButtonStyle(
+            backgroundColor:
+                MaterialStateProperty.resolveWith<Color?>((states) {
+              if (states.contains(MaterialState.pressed)) {
+                return Colors.blue;
+              }
+              return Colors.purple[800];
+            }),
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(0)),
+            ),
+          ),
         ),
       ),
     );
