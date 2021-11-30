@@ -1,4 +1,4 @@
-# navegacao_entre_paginas
+# Navegação entre páginas
 Aplicativo para troca de páginas através da interação com botões  
 ## Versão 1.0.1    
 - Foi utilizado AppBar, ElevatedButton, Navigator e o conceito de routes.  
